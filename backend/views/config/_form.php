@@ -8,14 +8,17 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="box box-primary">
-    <div class="box-body form">
-        <div class="row">
-		<?php
-			echo $form->labelEx($model,'name');
-			echo $form->textField($model,'name',array('class'=>'form-control'));
-			echo $form->error($model,'name');
-		?>
-	</div>
-    </div>
+<div class="config-form">
+
+    <?php $form = ActiveForm::begin(); ?>
+
+        <?= $form->field($model, 'name') ?>
+        <?= $form->field($model, 'value') ?>
+    
+        <div class="form-group">
+            <?= Html::submitButton('Submit', ['class' => 'btn btn-primary']) ?>
+        </div>
+
+    <?php ActiveForm::end(); ?>
+
 </div>

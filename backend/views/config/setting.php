@@ -1,27 +1,36 @@
+<?php
 
-<!-- Content Header (Page header) -->
-    <section class="content-header">
-        <h1>
-            Website Data
-            <small>Control panel</small>
-        </h1>
-        <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Dasboard</a></li>
-            <li class="active">Website Data</li>
-        </ol>
-    </section>
-    <!-- Main content -->
-    <section class="content">
-    <?php
-        foreach(Yii::app()->user->getFlashes() as $key => $message) {?>
-               <div class="alert alert-success alert-dismissable">
-                   <i class="fa fa-check"></i>
-                   <button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
-                   <b>Info!</b>
-                   <?php echo $message;?>
-               </div>
-     <?php } ?>
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+use yii\widgets\Breadcrumbs;
+use yii\bootstrap\ActiveField;
+//use app\models\Config;
+$model =new \app\models\Config();
+/* @var $this yii\web\View */
+/* @var $model app\models\config */
+/* @var $form ActiveForm */
+?>
+<?= $this->title='Website Data';?>
 
+<div class="config-setting">
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Dasboard</a></li>
+        <li class="active">Website Data</li>
+    </ol>
+    <?php $form = ActiveForm::begin(); ?>
     
-    </section>
-<!-- /.content -->		
+        <div class="form-group">
+            <?= $form->field($model, 'value')->textInput([
+                'class'=>'form-control'])->label('name',['class'=>'label-class'])?>
+        </div>
+        <div class="form-group">
+            <?= $form->field($model, 'value')->textInput([
+                'class'=>'form-control'])->label('decription',['class'=>'label-class'])?>
+        </div>
+    <div class="form-group">
+        <?= Html::submitButton('Submit', ['class' => 'btn btn-primary']) ?>
+    </div>    
+        
+    <?php ActiveForm::end(); ?>
+
+</div><!-- config-setting -->

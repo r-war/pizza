@@ -8,9 +8,9 @@ use yii\data\ActiveDataProvider;
 use app\models\config;
 
 /**
- * configSearch represents the model behind the search form about `app\models\config`.
+ * configsearch represents the model behind the search form about `app\models\config`.
  */
-class configSearch extends config
+class configsearch extends config
 {
     /**
      * @inheritdoc

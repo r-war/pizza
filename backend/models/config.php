@@ -3,7 +3,7 @@
 namespace app\models;
 
 use Yii;
-use yii\db\ActiveRecord;
+
 /**
  * This is the model class for table "config".
  *
@@ -11,11 +11,14 @@ use yii\db\ActiveRecord;
  * @property string $name
  * @property string $value
  */
-class config extends ActiveRecord
+class Config extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
+    public  $name;
+    public  $id;
+    public  $value;
     public static function tableName()
     {
         return 'config';
@@ -44,4 +47,5 @@ class config extends ActiveRecord
             'value' => 'Value',
         ];
     }
+    
 }

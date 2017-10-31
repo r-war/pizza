@@ -16,6 +16,13 @@ return [
         'request' => [
             'csrfParam' => '_csrf-backend',
         ],
+        /*'view'=>[
+            'theme'=>[
+                'pathMap'=>[
+                    '@app/views'=>'@vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app'
+                ],
+            ],
+        ],*/
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
@@ -37,16 +44,15 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+        
         'urlManager' => [
-            //'baseUrl'=>",
-            //'urlFormat'=>'path',
             'class'=>'yii\web\UrlManager',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'login' => 'site/login',
-                'logout' => 'site/logout',
-                'config'=>'config/setting',
+                'login'=>'site/login',
+                'logout'=>'site/logout',
+                'config'=>'config/index',
             ],
         ],
         
